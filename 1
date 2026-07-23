@@ -1,0 +1,39 @@
+#linear search
+a=[24,56,78,97,30]
+
+key =int(input("Enter the element to be searched:"))
+
+found=False
+
+for i in range (len(a)):
+    if a[i]==key:
+        print("Element found at index:",i)
+        found=True
+        break
+if not found:
+    print("Element not found")
+ 
+#----------------------------------------------------------------------   
+
+#linear search by user input
+a=[]
+
+n=int(input("Enter the number of elements:"))
+
+for i in range (n):
+    val=int(input("Eneter element:"))
+    a.append(val)
+    
+print(a)
+
+key =int(input("Enter the element to be searched:"))
+
+found=False
+
+for i in range (len(a)):
+    if a[i]==key:
+        print("Element found at index:",i)
+        found=True
+        break
+if not found:
+    print("Element not found")
