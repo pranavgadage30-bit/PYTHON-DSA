@@ -1,0 +1,55 @@
+#Binary search
+a=[10,20,30,40,50]
+
+key=int(input("Eneter the element to be searched:"))
+
+low=0
+high=len(a)-1
+
+while low<=high:
+    mid=(low+high)//2
+    
+    if a[mid]==key:
+        print("Element found at index:",mid)
+        break
+    elif mid<key:
+        low=mid+1 
+    else:
+        high=mid-1
+else:
+    print("Element not found")
+
+
+#-----------------------------------------------------------------------   
+
+
+#Binary search by user input
+a=[]
+
+n=int(input("Enter the number of elements:"))
+
+for i in range(n):
+    val=int(input("Enter element:"))
+    a.append(val)
+
+print(a)
+a.sort()
+print(a)
+
+key=int(input("Eneter the element to be searched:"))
+
+low=0
+high=len(a)-1
+
+while low<=high:
+    mid=(low+high)//2
+    
+    if a[mid]==key:
+        print("Element found at index:",mid)
+        break
+    elif mid<key:
+        low=mid+1 
+    else:
+        high=mid-1
+else:
+    print("Element not found")
