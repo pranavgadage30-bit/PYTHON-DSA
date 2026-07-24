@@ -1,0 +1,71 @@
+#Fibonacci series
+#1 Using for loop->O(n)
+
+n=int(input("Enter the number of terms:"))
+
+a=0
+b=1
+
+if n<0:
+    print("Enter positive number")
+elif n==1:
+    print(a)
+else:
+    print("Fibonacci series")
+    for i in range(n):
+        print(a,end=" ")
+        c=a+b
+        a=b
+        b=c
+        
+#2 Recursive method->O(2^n)
+def fibonacci(n):
+    if n<=1:
+        return n
+    return fibonacci(n-1)+fibonacci(n-2)
+terms=int(input("Enter the number of terms:"))
+
+print("Fibonacci series")
+for i in range(terms):
+    print(fibonacci(i),end=" ")
+    
+    
+#3 For finding nth term->O(n)->Leetcode->Recursion Tree
+class solution:
+    def fib(self,n:int)->int:
+        #base case
+        if n<=1:
+            return n
+        else:
+            return self.fib(n-1)+self.fib(n-2)
+        
+obj=solution()
+n=int(input("Enter nth term to find:"))
+result=obj.fib(n)
+print("Fibonacci number is:",result)
+
+#GCD of two numbers(HCF)
+def gcd(a,b):
+    if b==0:
+        return a
+    return gcd(b,a%b)
+
+def lcm(a,b):
+    return a*b//gcd(a,b)
+
+print(gcd(15,50))
+print(lcm(15,50))
+
+#Power(x,n)-O(log(n))
+def findPow(x,n):
+    #base case
+    if n==0:
+        return 1
+    #recursive case
+    a=findPow(x,n//2)
+    if n%2==0:
+        return a*a
+    else:
+        return a*a*x
+
+print(findPow(2,10))
