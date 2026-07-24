@@ -1,0 +1,26 @@
+#loop->O(n)
+n=5
+i=1
+
+while i<=n:
+    print(i,end=" ")
+    i+=1
+    
+#recursion->O(n)
+def printNumbers(i,n):
+    #base case
+    if i>n:
+        return
+    #recursive case
+    print(i,end=" ")
+    printNumbers(i+1,n)
+    
+printNumbers(1,5)
+
+#factorial
+def factorial(n):
+    
+    if n==0:
+        return 1
+    return n*factorial(n-1)
+print(factorial(5))
