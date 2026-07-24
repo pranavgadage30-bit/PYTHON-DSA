@@ -1,0 +1,22 @@
+#LIST
+#1.sum of 1 d array ->prefix sum->Given an integer array nums, return an array where each element is the sum of all elements from index 0 to the current index (running sum/prefix sum).
+
+class solution:
+    def runningSum(self,nums:list[int])->list[int]:
+        n=len(nums)
+        
+        ans=[]
+        ans.append(nums[0])
+        
+        for i in range(1,n):
+            x=ans[i-1]+nums[i]
+            ans.append(x)
+        
+        return ans
+    
+nums=[1,2,3,4,5]
+obj=solution()
+result=obj.runningSum(nums)
+
+print("Original array:",nums)
+print("Running sum:",result)
