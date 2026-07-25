@@ -1,0 +1,27 @@
+#3Given a sorted integer array nums, remove duplicates in-place such that each unique element appears at most twice, and return the new length of the array.
+class Solution:
+    def removeDuplicates(self, nums):
+        n = len(nums)
+        
+        if n<=2:
+            return n
+
+        start = 1
+
+        for i in range(2, n):
+            # Unique element
+            if nums[i] != nums[start-1]:
+                start += 1
+                nums[start] = nums[i]
+
+        return start + 1
+
+
+nums = [3, 3, 5, 5, 5, 7, 7, 9, 9]
+
+obj = Solution()
+result = obj.removeDuplicates(nums)
+
+print("Modified array", nums)
+print("Number of unique elements:", result)
+print("Array after removing duplicates:", nums[:result])
