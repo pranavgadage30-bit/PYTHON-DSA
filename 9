@@ -1,0 +1,20 @@
+#4.Sort array by parity->Given an integer array nums, move all even integers to the beginning of the array followed by all odd integers, and return the reordered array.
+class solution:
+    def sortArrayByParity(self,nums):
+        n=len(nums)
+        
+        start=0
+        
+        for i in range (n):
+            if nums[i]%2==0:
+                temp=nums[i]
+                nums[i]=nums[start]
+                nums[start]=temp
+                start+=1
+                
+        return nums
+    
+nums=[6,5,2,7,1,4,3,8]
+obj=solution()
+result=obj.sortArrayByParity(nums)
+print("After:",result)
